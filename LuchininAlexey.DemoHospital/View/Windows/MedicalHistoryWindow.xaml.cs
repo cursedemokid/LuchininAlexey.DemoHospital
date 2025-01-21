@@ -17,17 +17,16 @@ using System.Windows.Shapes;
 namespace LuchininAlexey.DemoHospital.View.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для InsurancePolicyWindow.xaml
+    /// Логика взаимодействия для MedicalHistoryWindow.xaml
     /// </summary>
-    public partial class InsurancePolicyWindow : Window
+    public partial class MedicalHistoryWindow : Window
     {
-        List<Patient> _patients = App.context.Patients.ToList();
-        List<InsurancePolicy> _insurancePolicies = App.context.InsurancePolicies.ToList();
-        public InsurancePolicyWindow(int? currentPatientPolicyId)
+        List<MedicalHistory> _medicalHistories = App.context.MedicalHistories.ToList();
+        public MedicalHistoryWindow(int? currentPatientHistoryId)
         {
             InitializeComponent();
 
-            PolicyLV.ItemsSource = _insurancePolicies.Where(insurance => insurance.Id == currentPatientPolicyId).ToList();
+            MedicalHistoryLV.ItemsSource = _medicalHistories.Where(history => history.Id == currentPatientHistoryId);
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)

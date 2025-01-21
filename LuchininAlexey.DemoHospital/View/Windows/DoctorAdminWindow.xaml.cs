@@ -22,7 +22,7 @@ namespace LuchininAlexey.DemoHospital.View.Windows
     public partial class DoctorAdminWindow : Window
     {
         int patientId;
-        int? currentPatientId;
+        int? currentPatientPolicyId;
         Patient patient = new Patient();
         List<Patient> _patients = App.context.Patients.ToList();
         public DoctorAdminWindow()
@@ -48,18 +48,26 @@ namespace LuchininAlexey.DemoHospital.View.Windows
         private void PolicyBtn_Click(object sender, RoutedEventArgs e)
         {
             patient = PatientLV.SelectedItem as Patient;
-            currentPatientId = patient.InsurancePolicyId;
-            InsurancePolicyWindow insurancePolicyWindow = new InsurancePolicyWindow(currentPatientId);
+            currentPatientPolicyId = patient.InsurancePolicyId;
+            InsurancePolicyWindow insurancePolicyWindow = new InsurancePolicyWindow(currentPatientPolicyId);
             insurancePolicyWindow.Show();
         }
 
         private void MedicalCardBtn_Click(object sender, RoutedEventArgs e)
         {
+            patient = PatientLV.SelectedItem as Patient;
+            int? currentPatientCardId = patient.MedicalCardId;
+            MedicalCardWindow medicalCardWindow = new MedicalCardWindow(currentPatientCardId);
+            medicalCardWindow.Show();
 
         }
 
         private void MedicalHistoryBtn_Click(object sender, RoutedEventArgs e)
         {
+            patient = PatientLV.SelectedItem as Patient;
+            int? currentPatientHistoryId = patient.MedicalCardId;
+            MedicalHistoryWindow medicalHistoryWindow = new MedicalHistoryWindow(currentPatientHistoryId);
+            medicalHistoryWindow.Show();
 
         }
 

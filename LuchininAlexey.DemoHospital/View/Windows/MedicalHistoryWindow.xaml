@@ -1,0 +1,42 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.MedicalHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="MedicalHistoryWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Button Name="CloseBtn" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Content="Закрыть" Click="CloseBtn_Click"/>
+
+        <ListView Name="MedicalHistoryLV" Grid.Row="3" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Allergies" DisplayMemberBinding="{Binding Allergies}"/>
+                    <GridViewColumn Header="ChronicIllness" DisplayMemberBinding="{Binding ChronicIllness}"/>
+                    <GridViewColumn Header="PreviousSurgeries" DisplayMemberBinding="{Binding PreviousSurgeries}"/>
+                    <GridViewColumn Header="HistoryOfIllness" DisplayMemberBinding="{Binding HistoryOfIllness}"/>
+                    <GridViewColumn Header="HereditaryDiseases" DisplayMemberBinding="{Binding HereditaryDiseases}"/>
+                    <GridViewColumn Header="Habits" DisplayMemberBinding="{Binding Habits}"/>
+                    <GridViewColumn Header="PhysicalActivity" DisplayMemberBinding="{Binding PhysicalActivity}"/>
+                    <GridViewColumn Header="PsychologicalState" DisplayMemberBinding="{Binding PsychologicalState}"/>
+                    <GridViewColumn Header="Vaccinations" DisplayMemberBinding="{Binding Vaccinations}"/>
+                    <GridViewColumn Header="CurrentMedications" DisplayMemberBinding="{Binding CurrentMedications}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
