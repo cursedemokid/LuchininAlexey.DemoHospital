@@ -1,0 +1,48 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.InsurancePolicyAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="InsurancePolicyAddWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Номер"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Дата окончания"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Страховая компания"/>
+
+        <TextBox Name="InsurancePolicyNumberTbx" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Name="InsurancePolicyOverDateTbx" Grid.Row="3" Grid.Column="3"/>
+        <TextBox Name="InsurancePolicyCompanyTbx" Grid.Row="5" Grid.Column="3"/>
+
+        <Grid Grid.Row="7" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Name="AddBtn" Grid.Column="0" Content="Добавить" Click="AddBtn_Click"/>
+            <Button Name="CloseBtn" Grid.Column="2" Content="Закрыть" Click="CloseBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>

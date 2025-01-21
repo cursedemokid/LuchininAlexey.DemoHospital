@@ -1,0 +1,68 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.HospitalizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="HospitalizationWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <ListView Name="PatientLV" Grid.Row="5" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto" Header="Имя" DisplayMemberBinding="{Binding Patient.Name}"/>
+                    <GridViewColumn Width="Auto" Header="Фамилия" DisplayMemberBinding="{Binding Patient.Surname}"/>
+                    <GridViewColumn Width="Auto" Header="Отчество" DisplayMemberBinding="{Binding Patient.Patonymic}"/>
+                    <GridViewColumn Width="Auto" Header="Дата" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Width="Auto" Header="Срок" DisplayMemberBinding="{Binding TimeLong}"/>
+                    <GridViewColumn Width="Auto" Header="Диагноз" DisplayMemberBinding="{Binding Diagnosis}"/>
+                    <GridViewColumn Width="Auto" Header="Отделение" DisplayMemberBinding="{Binding Department}"/>
+                    <GridViewColumn Width="Auto" Header="Условия" DisplayMemberBinding="{Binding Terms}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="60" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Id пациента"/>
+
+            <TextBox Name="PatientIdTbx" Grid.Column="2"/>
+
+            <Button Name="SearchBtn" Grid.Column="4" Content="Найти" Click="SearchBtn_Click"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="NewHospitalizationBtn" Grid.Column="0" Content="Новая госпитализация" Click="NewHospitalizationBtn_Click"/>
+            <Button Name="CancelHospitalizationBtn" Grid.Column="2" Content="Отменить госпитализацию" Height="50" VerticalAlignment="Top" Click="CancelHospitalizationBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>

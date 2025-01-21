@@ -1,0 +1,105 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Имя" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Фамилия" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Отчество" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="7" Grid.Column="1" Text="Серия и номер паспорта" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="9" Grid.Column="1" Text="Дата рождения" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="11" Grid.Column="1" Text="Пол" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="5" Text="Адрес" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="5" Text="Телефон" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="5" Text="Почта" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="7" Grid.Column="5" Text="Место работы" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="9" Grid.Column="5" Text="Мед. карта" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="11" Grid.Column="5" Text="Страховка" VerticalAlignment="Center"/>
+
+        <TextBox Name="NameTbx" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Name="SurnameTbx" Grid.Row="3" Grid.Column="3"/>
+        <TextBox Name="PatonymicTbx" Grid.Row="5" Grid.Column="3"/>
+        <TextBox Name="PassportTbx" Grid.Row="7" Grid.Column="3"/>
+        <TextBox Name="AddressTbx" Grid.Row="1" Grid.Column="7"/>
+        <TextBox Name="PhoneTbx" Grid.Row="3" Grid.Column="7"/>
+        <TextBox Name="EmailTbx" Grid.Row="5" Grid.Column="7"/>
+        <TextBox Name="PlaceOfWorkTbx" Grid.Row="7" Grid.Column="7"/>
+
+        <Grid Grid.Row="9" Grid.Column="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        <TextBox Name="MedicalCardIdTbx" Grid.Row="0"/>
+        <TextBox Name="MedicalCardDateIssueTbx" Grid.Row="2"/>
+        </Grid>
+
+        <Button Name="AgreeBtn" Grid.Row="13" Grid.Column="5" Content="Зарегистрировать" Click="AgreeBtn_Click"/>
+        <Button Name="CancelBtn" Grid.Row="13" Grid.Column="7" Content="Отмена" Click="CancelBtn_Click"/>
+
+        <Grid Grid.Row="11" Grid.Column="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+        <Button Name="InsurancePolicyBtn" Grid.Row="0" Grid.Column="0" Content="Заполнить" Click="InsurancePolicyBtn_Click"/>
+
+            <CheckBox Name="InsuranceAddedCheckBox" Grid.Column="2" VerticalAlignment="Center"/>
+
+        </Grid>
+
+        <DatePicker Name="DateOfBirthDP" Grid.Row="9" Grid.Column="3"/>
+
+        <Grid Grid.Row="11" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <CheckBox Name="GenderMaleCheckBox" Grid.Column="0" Content="Мужской" VerticalAlignment="Center" Checked="GenderMaleCheckBox_Checked" Unchecked="GenderMaleCheckBox_Unchecked"/>
+            <CheckBox Name="GenderFemaleCheckBox" Grid.Column="2" Content="Женский" VerticalAlignment="Center" Checked="GenderFemaleCheckBox_Checked" Unchecked="GenderFemaleCheckBox_Unchecked"/>
+        </Grid>
+
+        
+    </Grid>
+</Window>

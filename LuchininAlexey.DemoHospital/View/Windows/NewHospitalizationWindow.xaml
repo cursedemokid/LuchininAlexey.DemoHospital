@@ -1,0 +1,79 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.NewHospitalizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="NewHospitalizationWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Id пациента"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Срок госпитализации"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Условия"/>
+        <TextBlock Grid.Row="7" Grid.Column="1" Text="Врач"/>
+        <TextBlock Grid.Row="9" Grid.Column="1" Text="Диагноз"/>
+        <TextBlock Grid.Row="11" Grid.Column="1" Text="Отделение"/>
+
+        <ComboBox Name="TermsComboBox" Grid.Row="5" Grid.Column="3">
+            <ComboBoxItem Name="CostComboBox" Content="Платно"/>
+            <ComboBoxItem Name="NoCostComboBox" Content="Бесплатно"/>
+        </ComboBox>
+        <ComboBox Name="DoctorsComboBox" Grid.Row="7" Grid.Column="3" SelectedValuePath="Id">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Surname"/>
+                    <Binding Path="Name"/>
+                </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+
+        <TextBox Name="PatientIdTbx" Grid.Row="1" Grid.Column="3"/>
+        <TextBox Name="TimeLongTbx" Grid.Row="3" Grid.Column="3"/>
+        <TextBox Name="DiagnosisTbx" Grid.Row="9" Grid.Column="3"/>
+        <TextBox Name="DepartmentTbx" Grid.Row="11" Grid.Column="3"/>
+
+        <Grid Grid.Row="13" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="AcceptBtn" Content="Подтвердить" Click="AcceptBtn_Click"/>
+            <Button Name="CancelBtn" Grid.Column="2" Content="Отменить" Click="CancelBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>
