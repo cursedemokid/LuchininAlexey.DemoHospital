@@ -60,6 +60,20 @@
             <Button Name="PolicyBtn" Grid.Row="0" Grid.Column="0" Content="Открыть страховку" Click="PolicyBtn_Click"/>
         </Grid>
 
+        <Grid Grid.Row="1" Grid.Column="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Name="AddHistoryBtn" Grid.Row="0" Grid.ColumnSpan="3" Content="Добавить историю болезни" Click="AddHistoryBtn_Click"/>
+        </Grid>
+        
         <ListView Name="PatientLV" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="7">
             <ListView.View>
                 <GridView>

@@ -65,11 +65,18 @@ namespace LuchininAlexey.DemoHospital.View.Windows
         private void MedicalHistoryBtn_Click(object sender, RoutedEventArgs e)
         {
             patient = PatientLV.SelectedItem as Patient;
-            int? currentPatientHistoryId = patient.MedicalCardId;
+            int? currentPatientHistoryId = patient.MedicalHistoryId;
             MedicalHistoryWindow medicalHistoryWindow = new MedicalHistoryWindow(currentPatientHistoryId);
             medicalHistoryWindow.Show();
 
         }
 
+        private void AddHistoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            patient = PatientLV.SelectedItem as Patient;
+            int? currentPatientHistoryId = patient.MedicalHistoryId;
+            AddMedicalHistoryWindow addMedicalHistoryWindow = new AddMedicalHistoryWindow(currentPatientHistoryId);
+            addMedicalHistoryWindow.ShowDialog();
+        }
     }
 }

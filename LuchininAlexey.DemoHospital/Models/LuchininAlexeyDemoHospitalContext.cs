@@ -143,8 +143,6 @@ namespace LuchininAlexey.DemoHospital.Models
             {
                 entity.ToTable("MedicalHistory");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Allergies).HasMaxLength(100);
 
                 entity.Property(e => e.ChronicIllnesses).HasMaxLength(100);
