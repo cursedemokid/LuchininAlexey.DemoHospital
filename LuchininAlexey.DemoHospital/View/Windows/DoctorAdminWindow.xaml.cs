@@ -78,5 +78,13 @@ namespace LuchininAlexey.DemoHospital.View.Windows
             AddMedicalHistoryWindow addMedicalHistoryWindow = new AddMedicalHistoryWindow(currentPatientHistoryId);
             addMedicalHistoryWindow.ShowDialog();
         }
+
+        private void AddEventBtn_Click(object sender, RoutedEventArgs e)
+        {
+            patient = PatientLV.SelectedItem as Patient;
+            int? currentPatientId = patient.Id;
+            AddEventWindow addEventWindow = new AddEventWindow(currentPatientId);
+            addEventWindow.ShowDialog();
+        }
     }
 }

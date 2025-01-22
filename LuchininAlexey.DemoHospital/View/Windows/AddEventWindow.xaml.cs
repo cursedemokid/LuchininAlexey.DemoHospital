@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LuchininAlexey.DemoHospital.AppData;
+using LuchininAlexey.DemoHospital.Models;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,19 +22,49 @@ namespace LuchininAlexey.DemoHospital.View.Windows
     /// </summary>
     public partial class AddEventWindow : Window
     {
-        public AddEventWindow()
+        int? patientId;
+        List<Patient> _patients = App.context.Patients.ToList();
+        List<Doctor> _doctors = App.context.Doctors.ToList();
+        List<Event> _events = App.context.Events.ToList();
+        public AddEventWindow(int? id)
         {
             InitializeComponent();
+
+            EventsLV.ItemsSource = _events;
+
+            patientId = id;
+
+            PatientNameTbl.Text = _patients.FirstOrDefault(patient => patient.Id == patientId).Name;
+            PatientSurnameTbl.DataContext = _patients.FirstOrDefault(patient => patient.Id == patientId).Surname;
+
+            DoctorsCmb.ItemsSource = _doctors;
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            DateTime? eventDate = new DateTime();
+            eventDate = EventDatePicker.SelectedDate;
+            eventDate = eventDate.Value.AddHours(Convert.ToDouble(HoursTxb.Text));
+            eventDate = eventDate.Value.AddMinutes(Convert.ToDouble(MinutesTxb.Text));
 
+            Event newEvent = new Event
+            {
+                PatientId = patientId,
+                DoctorId = Convert.ToInt32(DoctorsCmb.SelectedValue),
+                EventName = EventNameTxb.Text,
+                Date = eventDate
+
+            };
+            App.context.Events.Add(newEvent);
+            App.context.SaveChanges();
+            Feedback.Information("Мероприятие запланировано");
+
+            EventsLV.ItemsSource = _events;
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

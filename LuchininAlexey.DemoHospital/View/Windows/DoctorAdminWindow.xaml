@@ -72,7 +72,7 @@
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <Button Name="AddHistoryBtn" Grid.Row="0" Grid.ColumnSpan="3" Content="Добавить историю болезни" Click="AddHistoryBtn_Click"/>
-            <Button Name="AddEventBtn" Grid.Row="2" Grid.ColumnSpan="1" Content="Назначить прием" Click="AddHistoryBtn_Click"/>
+            <Button Name="AddEventBtn" Grid.Row="2" Grid.ColumnSpan="1" Content="Назначить прием" Click="AddEventBtn_Click"/>
         </Grid>
         
         <ListView Name="PatientLV" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" Grid.ColumnSpan="7">
