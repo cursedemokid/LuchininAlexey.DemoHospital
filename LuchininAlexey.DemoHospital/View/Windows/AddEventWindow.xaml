@@ -1,0 +1,40 @@
+﻿<Window x:Class="LuchininAlexey.DemoHospital.View.Windows.AddEventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
+        mc:Ignorable="d"
+        Title="AddEventWindow" Height="720" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        
+        
+
+        <Grid Grid.Row="7" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Name="AddBtn" Grid.Column="1" Content="Добавить запись" Click="AddBtn_Click"/>
+            <Button Name="CancelBtn" Grid.Column="3" Content="Отмена" Click="CancelBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>
