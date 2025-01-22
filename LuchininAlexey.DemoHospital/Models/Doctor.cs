@@ -7,7 +7,9 @@ namespace LuchininAlexey.DemoHospital.Models
     {
         public Doctor()
         {
+            Events = new HashSet<Event>();
             Hospitalizations = new HashSet<Hospitalization>();
+            Schedules = new HashSet<Schedule>();
         }
 
         public int Id { get; set; }
@@ -17,6 +19,8 @@ namespace LuchininAlexey.DemoHospital.Models
         public string? Login { get; set; }
         public string? Password { get; set; }
 
+        public virtual ICollection<Event> Events { get; set; }
         public virtual ICollection<Hospitalization> Hospitalizations { get; set; }
+        public virtual ICollection<Schedule> Schedules { get; set; }
     }
 }

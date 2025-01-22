@@ -18,12 +18,14 @@ namespace LuchininAlexey.DemoHospital.Models
 
         public virtual DbSet<AmbulanceTeam> AmbulanceTeams { get; set; } = null!;
         public virtual DbSet<Doctor> Doctors { get; set; } = null!;
+        public virtual DbSet<Event> Events { get; set; } = null!;
         public virtual DbSet<Hospitalization> Hospitalizations { get; set; } = null!;
         public virtual DbSet<InsurancePolicy> InsurancePolicies { get; set; } = null!;
         public virtual DbSet<MedicalAndDiagnosticProcedure> MedicalAndDiagnosticProcedures { get; set; } = null!;
         public virtual DbSet<MedicalCard> MedicalCards { get; set; } = null!;
         public virtual DbSet<MedicalHistory> MedicalHistories { get; set; } = null!;
         public virtual DbSet<Patient> Patients { get; set; } = null!;
+        public virtual DbSet<Schedule> Schedules { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -61,6 +63,25 @@ namespace LuchininAlexey.DemoHospital.Models
                 entity.Property(e => e.Speciality).HasMaxLength(100);
 
                 entity.Property(e => e.Surname).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Event>(entity =>
+            {
+                entity.ToTable("Event");
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.EventName).HasMaxLength(100);
+
+                entity.HasOne(d => d.Doctor)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.DoctorId)
+                    .HasConstraintName("FK_Event_Doctor");
+
+                entity.HasOne(d => d.Patient)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.PatientId)
+                    .HasConstraintName("FK_Event_Patient");
             });
 
             modelBuilder.Entity<Hospitalization>(entity =>
@@ -208,6 +229,20 @@ namespace LuchininAlexey.DemoHospital.Models
                     .WithMany(p => p.Patients)
                     .HasForeignKey(d => d.MedicalHistoryId)
                     .HasConstraintName("FK_Patient_MedicalHistory");
+            });
+
+            modelBuilder.Entity<Schedule>(entity =>
+            {
+                entity.ToTable("Schedule");
+
+                entity.Property(e => e.DateFinish).HasColumnType("datetime");
+
+                entity.Property(e => e.DateStart).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Doctor)
+                    .WithMany(p => p.Schedules)
+                    .HasForeignKey(d => d.DoctorId)
+                    .HasConstraintName("FK_Schedule_Doctor");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -23,8 +23,16 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
-        
-        
+
+        <ListView Name="EventsLV" Grid.Row="5" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Header="Мероприятие" DisplayMemberBinding="{Binding EventName}"/>
+                    <GridViewColumn Header="Мероприятие" DisplayMemberBinding="{Binding }"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
         <Grid Grid.Row="7" Grid.Column="1">
             <Grid.ColumnDefinitions>
