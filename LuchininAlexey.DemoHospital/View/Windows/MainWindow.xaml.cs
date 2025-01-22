@@ -44,5 +44,11 @@ namespace LuchininAlexey.DemoHospital
             AuthorizationWindow authWindow = new AuthorizationWindow();
             authWindow.ShowDialog();
         }
+
+        private void ScheduleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ScheduleWindow scheduleWindow = new ScheduleWindow();
+            scheduleWindow.ShowDialog();
+        }
     }
 }

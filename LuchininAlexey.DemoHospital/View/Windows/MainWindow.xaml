@@ -25,6 +25,7 @@
         <Button Name="RegistrationBtn" Grid.Row="1" Grid.Column="1" Content="Зарегистрировать пациента" Click="RegistrationBtn_Click"/>
         <Button Name="HospitalizationBtn" Grid.Row="1" Grid.Column="3" Content="Госпитализация" Click="HospitalizationBtn_Click"/>
         <Button Name="DoctorAdminBtn" Grid.Row="3" Grid.Column="1" Content="Работа с пациентом" Click="DoctorAdminBtn_Click"/>
+        <Button Name="ScheduleBtn" Grid.Row="3" Grid.Column="3" Content="Настроить расписание" Click="ScheduleBtn_Click"/>
 
     </Grid>
 </Window>
