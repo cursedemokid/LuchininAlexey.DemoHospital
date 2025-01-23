@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LuchininAlexey.DemoHospital.View.Windows"
         mc:Ignorable="d"
-        Title="DoctorAdminWindow" Height="720" Width="1280">
+        Title="DoctorAdminWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
