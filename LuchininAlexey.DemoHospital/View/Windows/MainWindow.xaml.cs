@@ -22,9 +22,11 @@ namespace LuchininAlexey.DemoHospital
     /// </summary>
     public partial class MainWindow : Window
     {
+            int windowId;
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
@@ -41,14 +43,16 @@ namespace LuchininAlexey.DemoHospital
 
         private void DoctorAdminBtn_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationWindow authWindow = new AuthorizationWindow();
+            windowId = 0;
+            AuthorizationWindow authWindow = new AuthorizationWindow(windowId);
             authWindow.ShowDialog();
         }
 
         private void ScheduleBtn_Click(object sender, RoutedEventArgs e)
         {
-            ScheduleWindow scheduleWindow = new ScheduleWindow();
-            scheduleWindow.ShowDialog();
+            windowId = 1;
+            AuthorizationWindow authWindow = new AuthorizationWindow(windowId);
+            authWindow.ShowDialog();
         }
     }
 }

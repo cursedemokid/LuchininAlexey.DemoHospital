@@ -21,30 +21,52 @@ namespace LuchininAlexey.DemoHospital.View.Windows
     /// Логика взаимодействия для AuthorizationWindow.xaml
     /// </summary>
     public partial class AuthorizationWindow : Window
-    { List<Doctor> _doctors = App.context.Doctors.ToList();
-        public AuthorizationWindow()
+    {
+        List<Doctor> _doctors = App.context.Doctors.ToList();
+        int windowId;
+        public AuthorizationWindow(int id)
         {
             InitializeComponent();
+
+            windowId = id;
         }
 
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            Doctor doctor = _doctors.FirstOrDefault(doctor => doctor.Password == PasswordTbx.Text && doctor.Login == LoginTbx.Text);
-            if(doctor == null)
+            if (windowId == 0)
             {
-                Feedback.Error("Учетная запись не найдена");
+                Doctor doctor = _doctors.FirstOrDefault(doctor => doctor.Password == PasswordTbx.Text && doctor.Login == LoginTbx.Text);
+                if (doctor == null)
+                {
+                    Feedback.Error("Учетная запись не найдена");
+                }
+                else
+                {
+                    DoctorAdminWindow doctorAdminWindow = new DoctorAdminWindow();
+                    doctorAdminWindow.ShowDialog();
+                    this.Close();
+                }
             }
             else
             {
-                DoctorAdminWindow doctorAdminWindow = new DoctorAdminWindow();
-                doctorAdminWindow.ShowDialog();
+                Doctor doctor = _doctors.FirstOrDefault(doctor => doctor.Password == PasswordTbx.Text && doctor.Login == LoginTbx.Text);
+                if (doctor == null)
+                {
+                    Feedback.Error("Учетная запись не найдена");
+                }
+                else
+                {
+                    ScheduleWindow scheduleWindow = new ScheduleWindow(doctor.Id);
+                    scheduleWindow.ShowDialog();
+                    this.Close();
             }
         }
-
-        private void CancelBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
+
+    private void CancelBtn_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+}
 }
