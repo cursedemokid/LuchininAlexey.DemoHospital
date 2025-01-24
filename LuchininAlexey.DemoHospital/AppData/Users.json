@@ -1,0 +1,40 @@
+[
+
+    {
+      "PersonCode": "КЛ001",
+      "PersonRole": "Клиент",
+      "LastSecurityPointNumber": 1,
+      "LastSecurityPointDirection": "in",
+      "LastSecurityPointTime": "2024-09-16T10:00:00"
+    },
+    {
+      "PersonCode": "СОТ002",
+      "PersonRole": "Сотрудник",
+      "LastSecurityPointNumber": 2,
+      "LastSecurityPointDirection": "in",
+      "LastSecurityPointTime": "2024-09-16T11:30:00"
+    },
+    {
+      "PersonCode": "КЛ003",
+      "PersonRole": "Клиент",
+      "LastSecurityPointNumber": 3,
+      "LastSecurityPointDirection": "in",
+      "LastSecurityPointTime": "2024-09-16T12:15:00"
+    },
+    {
+      "PersonCode": "СОТ001",
+      "PersonRole": "Сотрудник",
+      "LastSecurityPointNumber": 1,
+      "LastSecurityPointDirection": "in",
+      "LastSecurityPointTime": "2024-09-16T13:45:00"
+    },
+{
+  "PersonCode": "КЛ002",
+  "PersonRole": "Клиент",
+  "LastSecurityPointNumber": 2,
+  "LastSecurityPointDirection": "in",
+  "LastSecurityPointTime": "2024-09-16T14:20:00"
+}
+]
+    
+  

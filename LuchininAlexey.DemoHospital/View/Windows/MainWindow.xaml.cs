@@ -54,5 +54,11 @@ namespace LuchininAlexey.DemoHospital
             AuthorizationWindow authWindow = new AuthorizationWindow(windowId);
             authWindow.ShowDialog();
         }
+
+        private void TrackingMovementBtn_Click(object sender, RoutedEventArgs e)
+        {
+            TrackingMovementOfClientsWindow trackingMovementOfClientsWindow = new TrackingMovementOfClientsWindow();
+            trackingMovementOfClientsWindow.Show();
+        }
     }
 }

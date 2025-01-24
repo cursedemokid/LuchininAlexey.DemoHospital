@@ -12,6 +12,8 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="10" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -26,6 +28,7 @@
         <Button Name="HospitalizationBtn" Grid.Row="1" Grid.Column="3" Content="Госпитализация" Click="HospitalizationBtn_Click"/>
         <Button Name="DoctorAdminBtn" Grid.Row="3" Grid.Column="1" Content="Работа с пациентом" Click="DoctorAdminBtn_Click"/>
         <Button Name="ScheduleBtn" Grid.Row="3" Grid.Column="3" Content="Настроить расписание" Click="ScheduleBtn_Click"/>
+        <Button Name="TrackingMovementBtn" Grid.Row="5" Grid.Column="3" Content="Перемещение сотрудников и клиентов" Click="TrackingMovementBtn_Click"/>
 
     </Grid>
 </Window>
