@@ -26,8 +26,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Number}"/>
-                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding OverDate}"/>
-                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding InsuranceCompany}"/>
+                    <GridViewColumn Header="OverDate" DisplayMemberBinding="{Binding OverDate}"/>
+                    <GridViewColumn Header="InsuranceCompany" DisplayMemberBinding="{Binding InsuranceCompany}"/>
                 </GridView>
             </ListView.View>
         </ListView>

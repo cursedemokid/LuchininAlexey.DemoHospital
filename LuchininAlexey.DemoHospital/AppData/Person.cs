@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LuchininAlexey.DemoHospital.AppData
 {
+
     public class Person
     {
-        public const string JSON_PATH = "O:\\LuchininAlexey\\LuchininAlexey.DemoHospital\\LuchininAlexey.DemoHospital\\AppData\\Users.json";
+        public static string JSON_PATH = App.configPath;
         public string PersonCode { get; set; }
         public string PersonRole { get; set; }
         public int LastSecurityPointNumber { get; set; }
