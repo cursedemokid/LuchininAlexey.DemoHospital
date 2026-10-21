@@ -1,0 +1,1 @@
+Set DEMOHOSPITAL_CONNECTION_STRING in the application process environment to the intended SQL Server connection string. Hostnames and database names are not embedded in source. Do not commit the value. DbContext options explicitly supplied by the caller are preserved.
