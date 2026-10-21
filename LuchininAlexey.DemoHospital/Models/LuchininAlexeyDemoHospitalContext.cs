@@ -58,7 +58,7 @@ namespace LuchininAlexey.DemoHospital.Models
 
                 entity.Property(e => e.Name).HasMaxLength(100);
 
-                entity.Property(e => e.Password).HasMaxLength(100);
+                entity.Property(e => e.Password).HasMaxLength(256);
 
                 entity.Property(e => e.Speciality).HasMaxLength(100);
 
