@@ -1,4 +1,5 @@
-﻿using LuchininAlexey.DemoHospital.AppData;
+﻿using ProjectSecurity;
+using LuchininAlexey.DemoHospital.AppData;
 using LuchininAlexey.DemoHospital.Models;
 
 using System;
@@ -22,7 +23,7 @@ namespace LuchininAlexey.DemoHospital.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
-        List<Doctor> _doctors = App.context.Doctors.ToList();
+
         int windowId;
         public AuthorizationWindow(int id)
         {
@@ -36,8 +37,8 @@ namespace LuchininAlexey.DemoHospital.View.Windows
         {
             if (windowId == 0)
             {
-                Doctor doctor = _doctors.FirstOrDefault(doctor => doctor.Password == PasswordTbx.Text && doctor.Login == LoginTbx.Text);
-                if (doctor == null)
+                Doctor doctor = App.context.Doctors.FirstOrDefault(doctor => doctor.Login == LoginTbx.Text);
+                if (doctor == null || !PasswordSecurity.Verify(PasswordTbx.Text, doctor.Password))
                 {
                     Feedback.Error("Учетная запись не найдена");
                 }
@@ -50,8 +51,8 @@ namespace LuchininAlexey.DemoHospital.View.Windows
             }
             else
             {
-                Doctor doctor = _doctors.FirstOrDefault(doctor => doctor.Password == PasswordTbx.Text && doctor.Login == LoginTbx.Text);
-                if (doctor == null)
+                Doctor doctor = App.context.Doctors.FirstOrDefault(doctor => doctor.Login == LoginTbx.Text);
+                if (doctor == null || !PasswordSecurity.Verify(PasswordTbx.Text, doctor.Password))
                 {
                     Feedback.Error("Учетная запись не найдена");
                 }
